@@ -12,16 +12,35 @@
         <h1>Weather Dashboard</h1>
     </header>
     <main>
+      <div class="row d-flex justify-content-around align-items-baseline">
         <section class="search-section">
-            <h2>Search for a city</h2>
-            <input id="city-search" type="text" placeholder="Denver" />
-            <button id="search-button">search</button>
-            <div id="past-searches" class="past-searches"></div>
+          <h2>Search for a city</h2>
+          <form action="GET">
+            <input type="text" id="city-search" name="city-search" placeholder="Denver">
+          </form>
+          <button type="search-button" id="search-button">Search</button>
+          <div id="past-searches" class="past-searches"></div>
         </section>
+        <section id="prevSearch" class="col-6">
+          <h4>Past cities:</h4>
+          <div class="pastCities"></div>
+        </section>
+      </div>
+      <div class="row justify-content-center">
         <section>
-            <div id="current-forecast" class="current-forecast"></div>
-            <div id="five-day-forecast" class="five-day-forecast"></div>
+            <div id="current-forecast" class="current-forecast">
+              <h2>Current Forecast</h2>
+            </div>
+            <div id="five-day-forecast" class="five-day-forecast">
+              <h2>Five Day Forecast</h2>
+              <div id="dayOneCard" class="dayOneCard"></div>
+              <div id="dayTwoCard" class="dayTwoCard"></div>
+              <div id="dayThreeCard" class="dayThreeCard"></div>
+              <div id="dayFourCard" class="dayFourCard"></div>
+              <div id="dayFiveCard" class="dayFiveCard"></div>
+            </div>
         </section>
+      </div>
     </main>
    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
