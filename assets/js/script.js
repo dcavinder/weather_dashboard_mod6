@@ -27,8 +27,8 @@ function getData() {
       .then(function (info) {
         console.log(info);
         console.log(info.dt);
-   
-    var fiveDayForecastURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityEl.value + '&units=imperial&appid=7f42e217c46960a881c3b83169db922f';
+     
+    var fiveDayForecastURL =  "https://api.openweathermap.org/data/2.5/forecast?lat=" + info.coord.lat + "&lon=" + info.coord.lon + "&units=imperial&appid=7f42e217c46960a881c3b83169db922f";
     
     fetch(fiveDayForecastURL)
       .then(function (response) {
@@ -38,7 +38,7 @@ function getData() {
         console.log(data);
       
       //Current Forecast
-      var currentForecast = document.querySelector(".current-Forecast");
+      var currentForecast = document.querySelector(".current-forecast");
       var date = moment(info.dt, "X").format("YYYY-MM-DD");
       currentForecast.innerHTML = info.name + " (" + date + ")";
       var currentWeatherIcon = document.createElement('img');
